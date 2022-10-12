@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  appconfigserver:
+    build:
+      context: .
+    command: bash start-dev.sh
+    ports:
+      - "8888:8888"
+    environment:
+      GRADLE_USER_HOME: /box
+      SPRING_PROFILES_ACTIVE: dev
+    volumes:
+      - .:/authuser
+      - boxconfigserver:/box
+    networks:
+      - ead-microservices-net
+  boxconfigserver:
+    image: busybox
+    volumes:
+      - /box
+    networks:
+      - ead-microservices-net
+networks:
+  ead-microservices-net:
+    name: ead-microservices-net
+    external: true
+volumes:
+  boxconfigserver:
