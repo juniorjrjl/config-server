@@ -25,3 +25,5 @@ eureka:
   client:
     service-url:
       defaultZone: 'http://${ead.service-registry.username}:${ead.service-registry.password}@appserviceregistry:8761/eureka'
+encrypt:
+  key: sk_test_51MNJbLKXBLWCp7joRdTQ1KHETwvWrvHw9VcF5ZUQ4EHpicshFlvWILT2CFJ9EI6RaTzB7HA0olcKFxV6xaFg7Xxu00TzVZ7XO7
